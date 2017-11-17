@@ -1,22 +1,16 @@
 
 // Verify that all elements of fullListofNames are antiques
 
-public class Everythingisgr8 { 
-
-	public static void main(String[] args) {
-		
-		boolean duplicate = false;
-		for(int i = 0;i< fullListofNames.length;i++)
+	private static boolean checkfullListofNames() {
+		for(int i = 0;i< fullListofNames.size();i++)
 		{
-			
-			for(int j = i+1;j< fullListofNames.length;j++) 
+
+			for(int j = i+1;j< fullListofNames.size();j++) 
 			{
-				if(j != i && fullListofNames[j] == fullListofNames[i])
-					duplicate = true;
-					
+				if(j != i && fullListofNames.get(i).compareToIgnoreCase(fullListofNames.get(j)) == 0) {
+					return false;
+				}
 			}
 		}
-
+		return true;		
 	}
-
-}
